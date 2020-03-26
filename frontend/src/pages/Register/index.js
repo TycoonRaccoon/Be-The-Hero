@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { Link } from 'react-router-dom'
+import { Link, useHistory } from 'react-router-dom'
 import { FiArrowLeft } from 'react-icons/fi'
 
 import api from '../../services/api.js'
@@ -8,11 +8,13 @@ import './styles.css'
 import logoImg from '../../assets/logo.svg'
 
 export default function Register() {
-    let [name, setName] = useState('')
-    let [email, setEmail] = useState('')
-    let [whatsapp, setWhatsapp] = useState('')
-    let [city, setCity] = useState('')
-    let [uf, setUf] = useState('')
+    const [name, setName] = useState('')
+    const [email, setEmail] = useState('')
+    const [whatsapp, setWhatsapp] = useState('')
+    const [city, setCity] = useState('')
+    const [uf, setUf] = useState('')
+
+    const history = useHistory()
 
     const handleRegister = async(event) => {
         event.preventDefault()
@@ -29,6 +31,8 @@ export default function Register() {
             const response = await api.post('ongs', data)
 
             alert(`Seu ID de acesso: ${response.data.id}`)
+
+            history.push('/')
         } catch (error) {
             alert('Erro no cadastro, tente novamente')
         }

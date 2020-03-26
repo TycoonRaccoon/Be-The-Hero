@@ -1,7 +1,6 @@
 {
   "name": "be-the-hero",
   "version": "1.0.0",
-  "description": "",
   "main": "index.js",
   "scripts": {
     "start": "nodemon ./src/index.js"
@@ -14,5 +13,7 @@
     "knex": "^0.20.13",
     "nodemon": "^2.0.2",
     "sqlite3": "^4.1.1"
-  }
+  },
+  "devDependencies": {},
+  "description": ""
 }
