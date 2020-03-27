@@ -16,8 +16,8 @@ export default function Register() {
 
     const history = useHistory()
 
-    const handleRegister = async(event) => {
-        event.preventDefault()
+    const handleRegister = async e => {
+        e.preventDefault()
 
         const data = {
             name,

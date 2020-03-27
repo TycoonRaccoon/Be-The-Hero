@@ -12,7 +12,7 @@ module.exports = {
             .offset((page - 1) * 5)
             .select(['incidents.*', 'ongs.name', 'ongs.email', 'ongs.whatsapp', 'ongs.city', 'ongs.uf'])
 
-        res.header('X-Total-Count', count['count(*)'])
+        res.header('x-total-count', count['count(*)'])
 
         res.json(incidents)
     },
